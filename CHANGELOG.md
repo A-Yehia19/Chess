@@ -10,7 +10,19 @@ The types of commit will be of the following format:
 - `Fixed:` for any bug fixes.
 
 
-[0.0.0](https://github.com/A-Yehia19/Chess.git/tree/0.0.0) - (2024-04-21)
+## Versions Log:
+
+### [0.1.0] - (2024-04-22)
+
+### Added:
+- models for the chess pieces
+- models for the chess board
+- models for the chess game
+- models for the chess player
+- basic functionality of the chess game through console
+
+
+## [0.0.0] - (2024-04-21)
 
 ### Added:
 - Initial commit
