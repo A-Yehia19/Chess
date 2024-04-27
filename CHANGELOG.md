@@ -12,6 +12,13 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [0.2.0] - (2024-04-28)
+
+### Added:
+- react page for the chess game
+- created the chess board with cells IDs
+- added assets to the project
+
 ### [0.1.0] - (2024-04-22)
 
 ### Added:

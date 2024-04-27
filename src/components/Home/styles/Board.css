@@ -1,0 +1,24 @@
+:root {
+    --cell-size: 50px;
+    --white-cell-color: #FFE8DE;
+    --black-cell-color: #7B3812;
+    --border-color: #38180B;
+}
+
+.white-cell {
+    background-color: var(--white-cell-color);
+}
+
+.black-cell {
+    background-color: var(--black-cell-color);
+}
+
+#board-grid {
+    display: grid;
+    grid-template-columns: repeat(8, var(--cell-size));
+    grid-template-rows: repeat(8, var(--cell-size));
+}
+
+#borad-border {
+    border: 15px solid var(--border-color);
+}
