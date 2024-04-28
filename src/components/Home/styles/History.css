@@ -1,0 +1,30 @@
+@import "../../../common.css";
+
+#game-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#history-title {
+    background-color: var(--border-color);
+    padding: 1px 140px;
+    color: var(--white-cell-color);
+    margin: 0;
+}
+
+#white-history {
+    border-right: 2px solid var(--border-color);
+    border-left: 4px solid var(--border-color);
+}
+
+#black-history {
+    border-right: 4px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+}
+
+.history * {
+    width: 100%;
+}

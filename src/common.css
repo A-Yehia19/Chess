@@ -1,3 +1,10 @@
+:root {
+    --cell-size: 50px;
+    --white-cell-color: #FFE8DE;
+    --black-cell-color: #7B3812;
+    --border-color: #38180B;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +26,14 @@
     align-items: center;
 }
 
-.center {
-    margin: auto;
+.grow {
+    flex-grow: 1;
+}
+
+.white-bg{
+    background-color: var(--white-cell-color);
+}
+
+.black-bg{
+    background-color: var(--black-cell-color);
 }

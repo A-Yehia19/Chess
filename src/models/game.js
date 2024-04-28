@@ -6,7 +6,6 @@ class Game {
         this.id = id;
         this.board = this.initiateBoard();
         this.turn = Constants.PLAYER_COLOR_WHITE;
-        this.moves = [];
         this.winner = null;
         this.players = {
             [Constants.PLAYER_COLOR_WHITE]: new Player(Constants.PLAYER_ID_WHITE, Constants.PLAYER_COLOR_WHITE),
@@ -60,7 +59,7 @@ class Game {
         // Move the piece
         if (possibleMoves.some(move => move.x === position.x && move.y === position.y)) {
             piece.move(position);
-            this.moves.push({piece, position});
+            this.players[this.turn].moves.push({piece, position});
             
             // Check if the move makes any captures
             if (piece.cellStatus(this.board, position.x, position.y, opponentPieces) === Constants.CELL_STATUS_OCCUPIED_OPPONENT) {

@@ -12,6 +12,11 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [0.2.1] - (2024-04-28)
+
+### Added:
+- added the History table to the chess game
+
 ### [0.2.0] - (2024-04-28)
 
 ### Added:

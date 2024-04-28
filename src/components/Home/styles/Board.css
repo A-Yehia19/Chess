@@ -1,9 +1,4 @@
-:root {
-    --cell-size: 50px;
-    --white-cell-color: #FFE8DE;
-    --black-cell-color: #7B3812;
-    --border-color: #38180B;
-}
+@import "../../../common.css";
 
 .white-cell {
     background-color: var(--white-cell-color);

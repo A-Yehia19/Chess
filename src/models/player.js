@@ -10,6 +10,7 @@ class Player {
     constructor (id, color){
         this.id = id;
         this.color = color;
+        this.moves = [];
         this.pieces = this.initializePieces();
     }
 
