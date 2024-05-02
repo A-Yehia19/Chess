@@ -12,6 +12,13 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [0.2.2] - (2024-04-28)
+
+### Added:
+- adjusted the chess page layout
+- failed try to load pieces assets
+-connect the game to the design
+
 ### [0.2.1] - (2024-04-28)
 
 ### Added:

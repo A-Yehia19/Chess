@@ -30,6 +30,10 @@ class Piece {
     getPossibleMoves(board, opponentPieces) {
         throw new Error("Method 'getPossibleMoves(board, opponentPieces)' must be implemented.");
     }
+
+    getLocationCode() {
+        return String.fromCharCode(this.position.x + 64) + this.position.y;
+    }
 }
 
 export default Piece;

@@ -6,7 +6,9 @@ import HomeHistory from "../components/Home/History"
 function HomePage() {
   return (
     <>
-      <div className="row">
+    <div className="screen">
+      <div className="row space-between full align-start">
+        <div></div>
         <div className="col">
           <h1> Chess </h1>
           <br />
@@ -14,6 +16,7 @@ function HomePage() {
         </div>
         <HomeHistory/>
       </div>
+    </div>
     </>
   )
 }

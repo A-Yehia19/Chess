@@ -117,15 +117,15 @@ class Game {
         this.resetGame();
         console.log("Game started");
 
-        while (!this.winner) {
-            let board = this.renderPieces();
-            board.forEach(row => console.log(row.join(' ')));
-            console.log(board);
-            console.log(`Player ${this.turn}'s turn`);
-            console.log("Enter move (e.g. 'A2,A4'):");
-            let input = prompt();
-            this.parseInput(input);
-        }
+        // while (!this.winner) {
+        //     let board = this.renderPieces();
+        //     board.forEach(row => console.log(row.join(' ')));
+        //     console.log(board);
+        //     console.log(`Player ${this.turn}'s turn`);
+        //     console.log("Enter move (e.g. 'A2,A4'):");
+        //     let input = prompt();
+        //     this.parseInput(input);
+        // }
     }
 }
 
