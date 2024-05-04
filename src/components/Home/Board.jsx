@@ -1,20 +1,18 @@
 import "../../common.css"
 import "./styles/Board.css"
 import Cells from "./Cells"
-import putPieces from "./functions/putPieces"
-import { useEffect } from "react"
+import { useState } from "react"
 
-
+export var refreshBoard;
 function HomeBoard() {
 
-    useEffect(() => {
-        putPieces();
-    });
+    const [board, setBoard] = useState(<Cells />);
+    refreshBoard = setBoard;
 
     return (
         <div id="borad-border">
             <div id="board-grid">
-                <Cells/>
+                {board}
             </div>
         </div>
     )

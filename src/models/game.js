@@ -1,5 +1,6 @@
 import Constants from './constants';
 import Player from './player';
+import Queen from './pieces/queen';
 
 class Game {
     constructor(id) {
@@ -7,6 +8,7 @@ class Game {
         this.board = this.initiateBoard();
         this.turn = Constants.PLAYER_COLOR_WHITE;
         this.winner = null;
+        this.status = "White's turn";
         this.players = {
             [Constants.PLAYER_COLOR_WHITE]: new Player(Constants.PLAYER_ID_WHITE, Constants.PLAYER_COLOR_WHITE),
             [Constants.PLAYER_COLOR_BLACK]: new Player(Constants.PLAYER_ID_BLACK, Constants.PLAYER_COLOR_BLACK),
@@ -45,34 +47,50 @@ class Game {
     }
 
     switchTurn() {
+        if (this.winner) {
+            return;
+        }
+        
         this.turn = this.turn === Constants.PLAYER_COLOR_WHITE
         ? Constants.PLAYER_COLOR_BLACK
         : Constants.PLAYER_COLOR_WHITE;
+
+        this.status = this.turn === Constants.PLAYER_COLOR_WHITE
+        ? "White's turn"
+        : "Black's turn";
     }
 
     movePiece(piece, position) {
-        let opponentPieces = this.players[this.turn === Constants.PLAYER_COLOR_WHITE ? Constants.PLAYER_COLOR_BLACK : Constants.PLAYER_COLOR_WHITE].pieces;
-        // let playerPieces = this.players[this.turn].pieces;
-        let possibleMoves = piece.getPossibleMoves(this.board, opponentPieces);
-        console.log(possibleMoves);
+        let opponentColor = this.turn === Constants.PLAYER_COLOR_WHITE ? Constants.PLAYER_COLOR_BLACK : Constants.PLAYER_COLOR_WHITE;
+        let opponentPieces = this.players[opponentColor].pieces;
+        let playerPieces = this.players[this.turn].pieces;
+        let possibleMoves = piece.getPossibleMoves(opponentPieces, playerPieces);
 
         // Move the piece
         if (possibleMoves.some(move => move.x === position.x && move.y === position.y)) {
+            let oldPosition = {x: piece.position.x, y: piece.position.y};
+            this.players[this.turn].moves.push({piece, oldPosition, newPosition: position});
             piece.move(position);
-            this.players[this.turn].moves.push({piece, position});
             
             // Check if the move makes any captures
-            if (piece.cellStatus(this.board, position.x, position.y, opponentPieces) === Constants.CELL_STATUS_OCCUPIED_OPPONENT) {
-                let opponentPiece = opponentPieces.find(piece => piece.position.x === position.x && piece.position.y === position.y);
-                opponentPieces = opponentPieces.filter(piece => piece.position.x !== position.x && piece.position.y !== position.y);
+            if (piece.cellStatus(position.x, position.y, opponentPieces, playerPieces) === Constants.CELL_STATUS_OCCUPIED_OPPONENT) {
+                let opponentPieceIndex = opponentPieces.findIndex(piece => piece.position.x === position.x && piece.position.y === position.y);
+                let opponentPiece = opponentPieces[opponentPieceIndex];
+                opponentPieces.splice(opponentPieceIndex, 1);
+                
+                this.players[opponentColor].pieces = opponentPieces;
+
                 if (opponentPiece.type === Constants.PIECE_TYPE_KING) {
                     this.winner = this.turn;
+                    this.status = this.turn === Constants.PLAYER_COLOR_WHITE ? "White wins" : "Black wins";
                 }
             }
 
             // Check if the move puts the pawn into promotion position
             if (piece.type === Constants.PIECE_TYPE_PAWN && (position.y === 1 || position.y === 8)) {
-                piece.type = Constants.PIECE_TYPE_QUEEN;
+                let pieceIndex = playerPieces.findIndex(piece => piece.position.x === position.x && piece.position.y === position.y);
+                playerPieces[pieceIndex] = new Queen(piece.color, position);
+                this.players[this.turn].pieces = playerPieces;
             }
 
             // switch turns
@@ -81,7 +99,7 @@ class Game {
             return true;
         }
 
-        console.log("Invalid move");
+        alert("Invalid move");
         return false;
     }
 
@@ -117,10 +135,10 @@ class Game {
         this.resetGame();
         console.log("Game started");
 
+        // // for console game testing
         // while (!this.winner) {
         //     let board = this.renderPieces();
         //     board.forEach(row => console.log(row.join(' ')));
-        //     console.log(board);
         //     console.log(`Player ${this.turn}'s turn`);
         //     console.log("Enter move (e.g. 'A2,A4'):");
         //     let input = prompt();

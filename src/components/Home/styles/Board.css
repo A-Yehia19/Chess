@@ -17,3 +17,11 @@
 #borad-border {
     border: 15px solid var(--border-color);
 }
+
+.cell-overlay {
+    position: absolute;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: var(--cell-overlay-color);
+    opacity: 0.5;
+}

@@ -1,10 +1,18 @@
 import "../../common.css"
 import "./styles/History.css"
-import { useEffect, useState } from "react";
+import { useState } from "react"
+import locationToID from "./functions/locationToID"
 
+
+export var refreshHistory;
 function HomeHistory() {
     const [whiteMoves, setWhiteMoves] = useState([]);
     const [blackMoves, setBlackMoves] = useState([]);
+
+    refreshHistory = {
+        white: setWhiteMoves,
+        black: setBlackMoves
+    };
 
     return (
         <div id="game-history col">
@@ -19,7 +27,9 @@ function HomeHistory() {
                     {/* white history appended here */}
                     {whiteMoves.map((move, index) => {
                         return (
-                            <label key={index}> {move} </label>
+                            <label key={index}>
+                                {move.piece.asset} : {locationToID(move.oldPosition)} {`->`} {locationToID(move.newPosition)}
+                            </label>
                         )
                     })}
                 </div>
@@ -33,7 +43,9 @@ function HomeHistory() {
                     {/* black history appended here */}
                     {blackMoves.map((move, index) => {
                         return (
-                            <label key={index}> {move} </label>
+                            <label key={index}>
+                                {move.piece.asset} : {locationToID(move.oldPosition)} {`->`} {locationToID(move.newPosition)}
+                            </label>
                         )
                     })}
                 </div>

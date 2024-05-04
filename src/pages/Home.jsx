@@ -1,5 +1,5 @@
 import "../common.css"
-import "./styles/Home.css"
+import Status from "../components/Home/Status"
 import HomeBoard from "../components/Home/Board"
 import HomeHistory from "../components/Home/History"
 import { game } from "../models/variables"
@@ -10,11 +10,10 @@ function HomePage() {
   return (
     <>
     <div className="screen">
-      <div className="row space-between full align-start">
-        <div></div>
+      <div className="row space-around full align-start">
         <div className="col">
           <h1> Chess </h1>
-          <br />
+          <Status/>
           <HomeBoard/>
         </div>
         <HomeHistory/>

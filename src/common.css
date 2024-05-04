@@ -3,6 +3,7 @@
     --white-cell-color: #FFE8DE;
     --black-cell-color: #7B3812;
     --border-color: #38180B;
+    --cell-overlay-color: #FF0000;
 }
 
 .row {
@@ -50,6 +51,10 @@
 
 .space-between{
     justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
 }
 
 .align-start{

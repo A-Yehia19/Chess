@@ -1,4 +1,12 @@
+import putPieces from "./functions/putPieces";
+import { useEffect } from "react";
+
+
 function Cells() {
+    useEffect(() => {
+        putPieces();
+    });
+
     var indexes = ["A", "B", "C", "D", "E", "F", "G", "H"];
     var numbers = ["8", "7", "6", "5", "4", "3", "2", "1"];
 

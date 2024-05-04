@@ -12,6 +12,18 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [1.0.0] - (2024-05-04)
+### Added:
+- status indicator to the game
+
+### Fixed:
+- board updating issue
+- history generated according to game moves
+- pieces capture bug
+- promotion bug
+
+
+
 ### [0.2.3] - (2024-05-04)
 
 ### Added:
@@ -22,6 +34,8 @@ The types of commit will be of the following format:
 - possible moves suggestion when out of bounds
 - the knight possible moves
 
+
+
 ### [0.2.2] - (2024-05-03)
 
 ### Added:
@@ -29,10 +43,14 @@ The types of commit will be of the following format:
 - failed try to load pieces assets
 - connect the game to the design
 
+
+
 ### [0.2.1] - (2024-04-28)
 
 ### Added:
 - added the History table to the chess game
+
+
 
 ### [0.2.0] - (2024-04-28)
 
@@ -40,6 +58,8 @@ The types of commit will be of the following format:
 - react page for the chess game
 - created the chess board with cells IDs
 - added assets to the project
+
+
 
 ### [0.1.0] - (2024-04-22)
 
@@ -49,6 +69,7 @@ The types of commit will be of the following format:
 - models for the chess game
 - models for the chess player
 - basic functionality of the chess game through console
+
 
 
 ## [0.0.0] - (2024-04-21)
