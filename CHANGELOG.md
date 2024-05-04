@@ -12,12 +12,22 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
-### [0.2.2] - (2024-04-28)
+### [0.2.3] - (2024-05-04)
+
+### Added:
+- adjusted the pieces overlay
+- make the pieces show their possible moves correctly
+
+### Fixed:
+- possible moves suggestion when out of bounds
+- the knight possible moves
+
+### [0.2.2] - (2024-05-03)
 
 ### Added:
 - adjusted the chess page layout
 - failed try to load pieces assets
--connect the game to the design
+- connect the game to the design
 
 ### [0.2.1] - (2024-04-28)
 

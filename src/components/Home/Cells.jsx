@@ -1,6 +1,7 @@
 function Cells() {
-    const indexes = ["A", "B", "C", "D", "E", "F", "G", "H"];
-    const numbers = ["8", "7", "6", "5", "4", "3", "2", "1"];
+    var indexes = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    var numbers = ["8", "7", "6", "5", "4", "3", "2", "1"];
+
     let cells = [];
 
     for (let i = 0; i < 8; i++) {
@@ -13,11 +14,13 @@ function Cells() {
                 className += " black-cell";
             }
 
-            let cell = <div key={id} id={id} className={className}> <label>{id}</label> </div>;
+            let cell = <div key={id} id={id} className={className}> 
+                <div id={id+'-asset'}></div>
+                <div id={id+'-overlay'}></div>
+            </div>;
             cells.push(cell);
         }
     }
-
     return cells;
 }
 

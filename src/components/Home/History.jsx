@@ -1,11 +1,15 @@
 import "../../common.css"
 import "./styles/History.css"
+import { useEffect, useState } from "react";
 
 function HomeHistory() {
+    const [whiteMoves, setWhiteMoves] = useState([]);
+    const [blackMoves, setBlackMoves] = useState([]);
+
     return (
         <div id="game-history col">
             <h2 id="history-title"> History </h2>
-            <div className="row">
+            <div className="row align-start">
                 {/* white history */}
                 <div id="white-history" className="col grow history">
                     <div className="center-content black-bg">
@@ -13,6 +17,11 @@ function HomeHistory() {
                     </div>
                     
                     {/* white history appended here */}
+                    {whiteMoves.map((move, index) => {
+                        return (
+                            <label key={index}> {move} </label>
+                        )
+                    })}
                 </div>
 
                 {/* black history */}
@@ -22,6 +31,11 @@ function HomeHistory() {
                     </div>
                     
                     {/* black history appended here */}
+                    {blackMoves.map((move, index) => {
+                        return (
+                            <label key={index}> {move} </label>
+                        )
+                    })}
                 </div>
             </div>
         </div>

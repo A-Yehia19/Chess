@@ -1,18 +1,23 @@
-import Game from "../../../models/game";
 import Constants from "../../../models/constants";
+import showPossibleMoves from "./showPossibleMoves";
+import { game } from "../../../models/variables";
 
 function putPieces() {
-    const whitePieces = Game.players[Constants.PLAYER_COLOR_WHITE].pieces;
-    const blackPieces = Game.players[Constants.PLAYER_COLOR_BLACK].pieces;
+    const whitePieces = game.players[Constants.PLAYER_COLOR_WHITE].pieces;
+    const blackPieces = game.players[Constants.PLAYER_COLOR_BLACK].pieces;
 
-    for (piece of whitePieces) {
+    for (let piece of whitePieces) {
         const location = piece.getLocationCode();
-        document.getElementById(location).innerHTML = piece.asset;
+        const cell = document.getElementById(location+"-asset");
+        cell.innerHTML = `<label> ${piece.asset} </label>`;
+        cell.onclick = showPossibleMoves(piece, blackPieces, whitePieces);
     }
 
-    for (piece of blackPieces) {
+    for (let piece of blackPieces) {
         const location = piece.getLocationCode();
-        document.getElementById(location).innerHTML = piece.asset;
+        const cell = document.getElementById(location+"-asset");
+        cell.innerHTML = `<label> ${piece.asset} </label>`;
+        cell.onclick = showPossibleMoves(piece, whitePieces, blackPieces);
     }
 }
 

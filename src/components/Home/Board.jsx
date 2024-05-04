@@ -1,15 +1,20 @@
 import "../../common.css"
 import "./styles/Board.css"
-import putPieces from "./functions/putPieces";
-import Cells from "./Cells";
-import React, { useEffect } from 'react';
+import Cells from "./Cells"
+import putPieces from "./functions/putPieces"
+import { useEffect } from "react"
+
 
 function HomeBoard() {
-    // useEffect(() => {putPieces()}, []);
+
+    useEffect(() => {
+        putPieces();
+    });
+
     return (
         <div id="borad-border">
             <div id="board-grid">
-                {Cells()}
+                <Cells/>
             </div>
         </div>
     )
