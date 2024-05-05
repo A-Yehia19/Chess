@@ -83,6 +83,7 @@ class Game {
                 if (opponentPiece.type === Constants.PIECE_TYPE_KING) {
                     this.winner = this.turn;
                     this.status = this.turn === Constants.PLAYER_COLOR_WHITE ? "White wins" : "Black wins";
+                    alert(this.status);
                 }
             }
 

@@ -16,42 +16,42 @@ class King extends Piece {
         let y = this.position.y;
 
         // Check if the king can move up
-        if (this.cellStatus(x, y + 1, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x, y + 1, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x, y: y + 1});
         }
 
         // Check if the king can move down
-        if (this.cellStatus(x, y - 1, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x, y - 1, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x, y: y - 1});
         }
 
         // Check if the king can move left
-        if (this.cellStatus(x - 1, y, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x - 1, y, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x - 1, y: y});
         }
 
         // Check if the king can move right
-        if (this.cellStatus(x + 1, y, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x + 1, y, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x + 1, y: y});
         }
 
         // Check if the king can move up-right
-        if (this.cellStatus(x + 1, y + 1, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x + 1, y + 1, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x + 1, y: y + 1});
         }
 
         // Check if the king can move up-left
-        if (this.cellStatus(x - 1, y + 1, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x - 1, y + 1, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x - 1, y: y + 1});
         }
 
         // Check if the king can move down-right
-        if (this.cellStatus(x + 1, y - 1, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x + 1, y - 1, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x + 1, y: y - 1});
         }
 
         // Check if the king can move down-left
-        if (this.cellStatus(x - 1, y - 1, opponentPieces, playerPieces) in [Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT]) {
+        if ([Constants.CELL_STATUS_EMPTY, Constants.CELL_STATUS_OCCUPIED_OPPONENT].includes(this.cellStatus(x - 1, y - 1, opponentPieces, playerPieces))) {
             possibleMoves.push({x: x - 1, y: y - 1});
         }
 

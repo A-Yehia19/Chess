@@ -12,6 +12,16 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [2.0.0] - (2024-05-05)
+### Added:
+- About page
+- Landing page
+
+### Fixed:
+- King possible moves bug
+
+
+
 ### [1.0.0] - (2024-05-04)
 ### Added:
 - status indicator to the game
