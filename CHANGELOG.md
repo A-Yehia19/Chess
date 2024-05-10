@@ -12,6 +12,12 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [2.0.1] - (2024-05-05)
+### Added:
+- make assets has alt text
+- update README
+
+
 ### [2.0.0] - (2024-05-05)
 ### Added:
 - About page

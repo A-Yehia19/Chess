@@ -2,6 +2,15 @@
 
 Online website to play chess with your friends.
 
+this website is a Chess game using react deployed on 2 servers with a load balancer for better experience
+
+Servers host website using Nginx and HAproxy load balancer on a third server
+
+
+
+you can visit the website through [this Link](http://abdullahyehia.tech/)
+
+
 ## Setup:
 
 In any terminal, type the following commands to install the necessary packages and run the app.

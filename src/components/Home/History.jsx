@@ -21,7 +21,7 @@ function HomeHistory() {
                 {/* white history */}
                 <div id="white-history" className="col grow history">
                     <div className="center-content black-bg">
-                        <img src="/src/assets/pieces/white/pawn.svg" alt="white pawn" height={30}/>
+                        <img src="/src/assets/pieces/white/pawn.svg" alt="♙" height={30}/>
                     </div>
                     
                     {/* white history appended here */}
@@ -37,7 +37,7 @@ function HomeHistory() {
                 {/* black history */}
                 <div id="black-history" className="col grow history">
                     <div className="center-content white-bg">
-                        <img src="/src/assets/pieces/black/pawn.svg" alt="black pawn" height={30}/>
+                        <img src="/src/assets/pieces/black/pawn.svg" alt="♟" height={30}/>
                     </div>
                     
                     {/* black history appended here */}
