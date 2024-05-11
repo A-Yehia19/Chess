@@ -8,7 +8,7 @@ Servers host website using Nginx and HAproxy load balancer on a third server
 
 
 
-you can visit the website through [this Link](http://abdullahyehia.tech/)
+you can visit the website through [this Link](http://www.abdullahyehia.tech/)
 
 
 ## Setup:

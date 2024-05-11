@@ -12,7 +12,16 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
-### [2.0.1] - (2024-05-05)
+### [2.0.2] - (2024-05-11)
+### Added:
+- make assets in public for better deployment
+
+### Fixed:
+- fixed the assets path in the chess page
+- fixed pawn double move bug
+
+
+### [2.0.1] - (2024-05-10)
 ### Added:
 - make assets has alt text
 - update README

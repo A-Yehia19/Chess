@@ -24,7 +24,7 @@ class Pawn extends Piece {
         }
 
         // Check if the pawn can move two squares forward
-        if (this.color === Constants.PLAYER_COLOR_WHITE && y === 2 && this.cellStatus(x, 3, opponentPieces, playerPieces) === Constants.CELL_STATUS_EMPTY) {
+        if (this.color === Constants.PLAYER_COLOR_WHITE && y === 2 && this.cellStatus(x, 4, opponentPieces, playerPieces) === Constants.CELL_STATUS_EMPTY) {
             possibleMoves.push({x: x, y: 4});
         }
         if (this.color === Constants.PLAYER_COLOR_BLACK && y === 7 && this.cellStatus(x, 5, opponentPieces, playerPieces) === Constants.CELL_STATUS_EMPTY) {
