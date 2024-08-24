@@ -60,3 +60,8 @@
 .align-start{
     align-items: flex-start;
 }
+
+button{
+    cursor: pointer;
+    color: var(--white-cell-color);
+}

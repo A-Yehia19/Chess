@@ -9,8 +9,10 @@ function LandingPage() {
             <div className="col">
                 <h1> Chess </h1>
                 <p> Click on the button below to start a new game. </p>
-                <Button href="/game/" text={"Start Game"}> </Button>
-                <Button href="/about/" text={"About Game"}> </Button>
+                <Button href="/game/" text={"Offline Game"} />
+                <Button href="/host/" text={"Host Game"} />
+                <Button href="/join/" text={"Join Game"} />
+                <Button href="/about/" text={"About Game"} />
                 <h1>&nbsp;</h1>
             </div>
         </div>

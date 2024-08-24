@@ -12,6 +12,13 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [3.0.0] - (2024-08-24)
+### Added:
+- introduce sockes to the website
+- introduce rooms system to play
+- ability to join or create room
+
+
 ### [2.0.2] - (2024-05-11)
 ### Added:
 - make assets in public for better deployment
