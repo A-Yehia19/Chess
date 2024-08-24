@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import io from "socket.io-client";
 import sendMessage from "../utils/sockets/send_message";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://chess-backend-swart.vercel.app/");
 
 function JoinPage() {
   const Button = styled.button`

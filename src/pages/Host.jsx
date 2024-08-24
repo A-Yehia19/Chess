@@ -12,7 +12,7 @@ function HostPage() {
   `;
 
   useEffect(() => {
-    const socket = io("http://localhost:3001");
+    const socket = io("https://chess-backend-swart.vercel.app/");
     socket.emit("joinRoom", game.id);
     socket.on("receive_message", () => {
       alert("Player 2 has joined the room");
