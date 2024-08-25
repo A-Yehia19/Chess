@@ -12,6 +12,12 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [3.0.2] - (2024-08-25)
+### Added:
+- Added enviroment variables to the frontend
+- open the socket at project level
+
+
 ### [3.0.1] - (2024-08-24)
 ### Added:
 - changed the link to the backend server

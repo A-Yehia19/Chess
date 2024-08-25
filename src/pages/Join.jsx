@@ -1,10 +1,8 @@
 import "../common.css"
-import { game } from "../models/variables"
+import { game, socket } from "../models/variables"
 import styled from 'styled-components';
-import io from "socket.io-client";
 import sendMessage from "../utils/sockets/send_message";
-
-const socket = io.connect("https://chess-backend-swart.vercel.app/");
+import joinRoom from "../utils/sockets/join_room";
 
 function JoinPage() {
   const Button = styled.button`
@@ -12,12 +10,11 @@ function JoinPage() {
     margin-top: 20px;
   `;
 
-  function joinRoom() {
+  function joinButton() {
     const roomID = document.getElementById("roomID").value;
     if (roomID !== "") {
       game.id = roomID;
-      console.log("Joined room with ID: " + roomID);
-      socket.emit("joinRoom", roomID);
+      joinRoom(socket, roomID);
       sendMessage(socket, "Player 2 has joined the room", roomID);
       window.location.href = `/game/${roomID}`;
     }
@@ -34,7 +31,7 @@ function JoinPage() {
           <h3> Room ID: </h3>
           <input type="number" name="roomID" id="roomID" />
         </div>
-        <Button onClick={joinRoom}>
+        <Button onClick={joinButton}>
           Join Room
         </Button>
       </div>

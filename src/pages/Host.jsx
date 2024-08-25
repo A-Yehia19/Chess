@@ -1,10 +1,11 @@
 import "../common.css"
-import { game } from "../models/variables"
+import { game, socket } from "../models/variables"
 import Loader from "../components/common/loader"
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import styled from 'styled-components';
-import io from "socket.io-client";
 import { useEffect } from "react";
+import joinRoom from "../utils/sockets/join_room";
+
 
 function HostPage() {
   const Button = styled.button`
@@ -12,8 +13,7 @@ function HostPage() {
   `;
 
   useEffect(() => {
-    const socket = io("https://chess-backend-swart.vercel.app/");
-    socket.emit("joinRoom", game.id);
+    joinRoom(socket, game.id);
     socket.on("receive_message", () => {
       alert("Player 2 has joined the room");
       window.location.href = `/game/${game.id}`;
