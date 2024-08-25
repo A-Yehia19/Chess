@@ -1,4 +1,7 @@
 import "../common.css"
+import Status from "../components/Home/Status"
+import HomeBoard from "../components/Home/Board"
+import HomeHistory from "../components/Home/History"
 import { game } from "../models/variables"
 
 function OnlinePage() {
@@ -7,7 +10,14 @@ function OnlinePage() {
   return (
     <>
     <div className="screen">
-      <h1>online game</h1>
+      <div className="row space-around full align-start">
+        <div className="col">
+          <h1> Chess </h1>
+          <Status/>
+          <HomeBoard/>
+        </div>
+        <HomeHistory/>
+      </div>
     </div>
     </>
   )

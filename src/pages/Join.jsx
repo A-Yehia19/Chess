@@ -13,10 +13,10 @@ function JoinPage() {
   function joinButton() {
     const roomID = document.getElementById("roomID").value;
     if (roomID !== "") {
-      game.id = roomID;
-      joinRoom(socket, roomID);
-      sendMessage(socket, "Player 2 has joined the room", roomID);
-      window.location.href = `/game/${roomID}`;
+      game.id = parseInt(roomID);
+      joinRoom(socket, game.id);
+      sendMessage(socket, "Player 2 has joined the room", game.id);
+      window.location.href = `/game/${game.id}`;
     }
   };
 

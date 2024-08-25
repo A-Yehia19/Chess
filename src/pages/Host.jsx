@@ -5,6 +5,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import styled from 'styled-components';
 import { useEffect } from "react";
 import joinRoom from "../utils/sockets/join_room";
+import sendMessage from "../utils/sockets/send_message";
 
 
 function HostPage() {
@@ -14,11 +15,11 @@ function HostPage() {
 
   useEffect(() => {
     joinRoom(socket, game.id);
-    socket.on("receive_message", () => {
-      alert("Player 2 has joined the room");
+    sendMessage(socket, "Player 1 has joined the room", game.id);
+    socket.on("receive_message", (data) => {
       window.location.href = `/game/${game.id}`;
     });
-  }, [])
+  }, [socket, game.id]);
   
   return (
     <>

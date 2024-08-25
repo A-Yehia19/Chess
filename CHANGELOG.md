@@ -12,6 +12,12 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [3.0.3] - (2024-08-25)
+### Fixed:
+- Host and Guests join same room
+- Host get redirected when another player joins the room
+
+
 ### [3.0.2] - (2024-08-25)
 ### Added:
 - Added enviroment variables to the frontend
