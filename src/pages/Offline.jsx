@@ -4,7 +4,8 @@ import HomeBoard from "../components/Home/Board"
 import HomeHistory from "../components/Home/History"
 import { game } from "../models/variables"
 
-function HomePage() {
+function OfflinePage() {
+  game.player = null;
   game.startGame();
 
   return (
@@ -23,4 +24,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default OfflinePage

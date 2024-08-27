@@ -35,6 +35,9 @@ function showPossibleMoves(piece, opponentPieces, playerPieces) {
         }
 
         clearOverlay();
+
+        if (game.player && game.player !== piece.color)
+            return;
         
         if (gameVars.activePiece == piece) {
             gameVars.activePiece = null;

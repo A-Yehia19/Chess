@@ -12,6 +12,12 @@ The types of commit will be of the following format:
 
 ## Versions Log:
 
+### [4.0.0] - (2024-08-27)
+### Added:
+- Multiplayer ability
+- Ability to play with friends
+
+
 ### [3.0.3] - (2024-08-25)
 ### Fixed:
 - Host and Guests join same room

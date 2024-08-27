@@ -1,12 +1,14 @@
 import Constants from './constants';
 import Player from './player';
 import Queen from './pieces/queen';
+import sendMove from '../utils/sockets/send_move';
 
 class Game {
     constructor(id) {
         this.id = id;
         this.board = this.initiateBoard();
         this.turn = Constants.PLAYER_COLOR_WHITE;
+        this.player = null;
         this.winner = null;
         this.status = "White's turn";
         this.players = {
@@ -70,6 +72,7 @@ class Game {
         if (possibleMoves.some(move => move.x === position.x && move.y === position.y)) {
             let oldPosition = {x: piece.position.x, y: piece.position.y};
             this.players[this.turn].moves.push({piece, oldPosition, newPosition: position});
+            sendMove(piece, position);
             piece.move(position);
             
             // Check if the move makes any captures

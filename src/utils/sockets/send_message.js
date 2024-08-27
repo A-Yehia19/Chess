@@ -1,4 +1,6 @@
-function sendMessage (socket, message, room) {
+import { socket } from "../../models/variables";
+
+function sendMessage (message, room) {
     socket.emit("send_message", { message, room });
 };
 

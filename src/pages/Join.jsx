@@ -1,22 +1,27 @@
 import "../common.css"
 import { game, socket } from "../models/variables"
-import styled from 'styled-components';
+import Constants from "../models/constants";
 import sendMessage from "../utils/sockets/send_message";
 import joinRoom from "../utils/sockets/join_room";
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom'
+
+const Button = styled.button`
+  background-color: var(--black-cell-color);
+  margin-top: 20px;
+`;
 
 function JoinPage() {
-  const Button = styled.button`
-    background-color: var(--black-cell-color);
-    margin-top: 20px;
-  `;
+  const navigate = useNavigate();
 
   function joinButton() {
     const roomID = document.getElementById("roomID").value;
     if (roomID !== "") {
       game.id = parseInt(roomID);
-      joinRoom(socket, game.id);
-      sendMessage(socket, "Player 2 has joined the room", game.id);
-      window.location.href = `/game/${game.id}`;
+      game.player = Constants.PLAYER_COLOR_BLACK;
+      joinRoom(game.id);
+      sendMessage("Player 2 has joined the room", game.id);
+      navigate(`/game/${game.id}`);
     }
   };
 
