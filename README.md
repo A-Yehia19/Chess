@@ -2,9 +2,7 @@
 
 Online website to play chess with your friends.
 
-this website is a Chess game using react deployed on 2 servers with a load balancer for better experience
-
-Servers host website using Nginx and HAproxy load balancer on a third server
+this website is a Chess game using react, Node.js, and socket.io to play with your friends online.
 
 
 
